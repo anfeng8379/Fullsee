@@ -8,6 +8,7 @@ namespace MvcApplication1.Models
 {
     public class TestModels
     {
+
     }
 
     public class Register_Model
