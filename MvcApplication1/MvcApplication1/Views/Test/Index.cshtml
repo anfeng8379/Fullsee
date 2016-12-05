@@ -1,0 +1,30 @@
+﻿@model MvcApplication1.Models.Register_Model
+@{
+    ViewBag.Title = "测试注册";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm("Save", "TestController"))
+{ 
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    
+    <ol>
+        <li>
+            @Html.LabelFor(m => m.UserName1)
+            @Html.TextBoxFor(m => m.UserName1)
+        </li>
+        <li>
+            @Html.LabelFor(m => m.Password1)
+            @Html.PasswordFor(m => m.Password1)
+        </li>
+        <li>
+            @Html.LabelFor(m => m.ConfirmPassword1)
+            @Html.PasswordFor(m => m.ConfirmPassword1)
+        </li>
+    </ol>
+    <input type="submit" value="注册" />
+    @Html.ActionLink("保存","Test_Save","Test")
+}
+ 

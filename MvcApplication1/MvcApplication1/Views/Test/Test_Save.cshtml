@@ -1,0 +1,38 @@
+﻿@model MvcApplication1.Models.Register_Model 
+@{
+    ViewBag.title = "注册1111";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.title</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Test_Save", "Test", FormMethod.Post, new { name = "nbform", id = "nbform" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <ol>
+                <li>
+                    @Html.LabelFor(j => j.UserName1)
+                    @Html.TextBoxFor(j => j.UserName1)
+                </li>
+                <li>
+                    @Html.LabelFor(j => j.Password1)
+                    @Html.PasswordFor(j => j.Password1)
+                </li>
+                <li>
+                    @Html.LabelFor(j => j.ConfirmPassword1)
+                    @Html.PasswordFor(j => j.ConfirmPassword1)
+                </li>
+            </ol>
+            <input type="submit" value="注册" />
+        }
+    </div>
+</body>
+</html>
